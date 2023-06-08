@@ -8,7 +8,7 @@ const Login = () => {
 
   const { isLoged, setIsLoged } = useSelector((state) => state.isLoged)
   const form = {
-    email: "",
+    username: "",
     password: "",
   };
 
