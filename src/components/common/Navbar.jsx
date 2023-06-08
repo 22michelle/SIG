@@ -32,12 +32,12 @@ export const Navbar = () => {
           <div className="row flex-end text-wrap">
             <div className="col m-3">
               <NavLink to="/register">
-                <button className="btn text-black">Registro</button>
+                <button className="btn">Registro</button>
               </NavLink>
             </div>
             <div className="col m-3">
               <NavLink to="/login">
-                <button className="btn text-black">
+                <button className="btn">
                   Login <i className="fa-solid fa-right-to-bracket me-2" />
                 </button>
               </NavLink>

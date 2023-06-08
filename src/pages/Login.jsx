@@ -87,7 +87,7 @@ const Login = () => {
               </Link>
               .
             </p>
-            <Link clas to="/profile">
+            <Link className="text-decoration-none" to="/profile">
               {" "}
               <button type="submit" className="btn-registro">
                 Iniciar sesion

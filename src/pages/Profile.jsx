@@ -2,6 +2,7 @@ import "./StylesProfile.css";
 import Logo from "../assets/bigtrade-logo-03.png";
 import { Link } from "react-router-dom";
 
+
 const Profile = () => {
   return (
     <div className="body">
@@ -28,7 +29,7 @@ const Profile = () => {
           </ul>
           <hr />
           <Link to="/">
-            <button className="button">Cerrar Sesión</button>
+            <button className="btn">Cerrar Sesión</button>
           </Link>{" "}
           <img className="Logo" src={Logo} alt="" />
         </div>
