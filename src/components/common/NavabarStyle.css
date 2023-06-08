@@ -12,7 +12,7 @@
 }
 
 .navbar.scrolled {
-    background-color: #ffffff;
+    background-color: #ffffff00;
   }
 
 .navbar .logo {
@@ -25,7 +25,7 @@
 .navbar .logo:hover {
   height: 50px;
   width: 180px;
-  transition: all 0.9s;
+  transition: all 0.5s;
 }
 
 .top-fixed {
