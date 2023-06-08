@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 const Registro = () => {
   const initialValues = {
+    name: "",
+    lastname: "",
     email: "",
     password: "",
     username: "",
@@ -13,6 +15,8 @@ const Registro = () => {
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().required("Ingrese su email"),
+    name: Yup.string().required("Ingrese su nombre"),
+    lastname: Yup.string().required("Ingrese su apellido"),
     password: Yup.string().required("Ingrese su contraseña"),
     username: Yup.string().required("Ingrese un username"),
   });
@@ -54,6 +58,28 @@ const Registro = () => {
               </Field>
               <ErrorMessage
                 name="email"
+                component="div"
+                className="error-message"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="name">Name</label>
+              <Field name="name">
+                {({ field }) => (
+                  <div className="input-with-icon">
+                    <i className="fa-solid fa-user"/>
+                    <input
+                      {...field}
+                      type="text"
+                      id="name"
+                      className="form-control"
+                      placeholder="Ingrese su Nombre"
+                    />
+                  </div>
+                )}
+              </Field>
+              <ErrorMessage
+                name="name"
                 component="div"
                 className="error-message"
               />
@@ -118,6 +144,7 @@ const Registro = () => {
         </Formik>
       </div>
     </div>
+    
   );
 };
 

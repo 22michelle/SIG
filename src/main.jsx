@@ -5,6 +5,8 @@ import { Navbar } from "./components/common/Navbar.jsx";
 import { Home } from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
+import axios from "axios";
+import Profile from "./pages/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,8 +27,12 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
 ]);
-
+axios.defaults.baseURL = "";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />

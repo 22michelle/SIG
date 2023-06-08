@@ -3,16 +3,14 @@ import * as Yup from "yup";
 import "./Styles.css";
 import { Link } from "react-router-dom";
 
-
-
 const Login = () => {
   const initialValues = {
-    email: "",
+    username: "",
     password: "",
   };
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().required("Ingrese su email"),
+    username: Yup.string().required("Ingrese su username"),
     password: Yup.string().required("Ingrese su contraseña"),
   });
 
@@ -36,28 +34,6 @@ const Login = () => {
           onSubmit={handleSubmit}
         >
           <Form>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <Field name="email">
-                {({ field }) => (
-                  <div className="input-with-icon">
-                    <i className="fa-solid fa-envelope fs-4 m-2" />
-                    <input
-                      {...field}
-                      type="text"
-                      id="email"
-                      className="form-control"
-                      placeholder="Ingrese su email"
-                    />
-                  </div>
-                )}
-              </Field>
-              <ErrorMessage
-                name="email"
-                component="div"
-                className="error-message"
-              />
-            </div>
             <div className="form-group">
               <label htmlFor="username">Username</label>
               <Field name="username">
@@ -106,14 +82,17 @@ const Login = () => {
 
             <p>
               ¿Ya tienes una cuenta? Inicia sesión{" "}
-              <Link to="/login" className="p">
+              <Link to="/register" className="p">
                 aquí
               </Link>
               .
             </p>
-            <button type="submit" className="btn-registro">
-              Registrarse
-            </button>
+            <Link clas to="/profile">
+              {" "}
+              <button type="submit" className="btn-registro">
+                Iniciar sesion
+              </button>
+            </Link>
           </Form>
         </Formik>
       </div>
