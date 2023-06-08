@@ -5,6 +5,8 @@ import { Navbar } from "./components/common/Navbar.jsx";
 import { Home } from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
+import axios from "axios";
+import Profile from "./pages/Profile.jsx";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
 
@@ -27,8 +29,12 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
 ]);
-
+axios.defaults.baseURL = "";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <RouterProvider router={router} />

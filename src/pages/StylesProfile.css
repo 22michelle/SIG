@@ -1,0 +1,81 @@
+.body{
+    background-color: #652c5f;
+    height: 100%;
+    padding: 5%;
+}
+
+.content {
+  font-family: "Kanit", sans-serif;
+  background-color: #050404f8;
+  padding: 20px;
+  color: white;
+  max-width: 55%;
+  height: 550px;
+  margin: 0 auto;
+  margin-top: 100px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+.content h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.content ul {
+  list-style: none;
+  font-size: 1.2rem;
+}
+.content li {
+  font-family: "Kanit", sans-serif;
+  padding: 8px;
+  font-weight: bold;
+}
+.content hr {
+  width: 100%;
+  opacity: 5%;
+}
+.ContainerPadre {
+  position: relative;
+}
+
+.Logo {
+  width: 120px;
+  height: 45px;
+  position: absolute;
+  right: 20px;
+  padding: 10px;
+  cursor: pointer;
+  top: 460px;
+}
+.data {
+  font-weight: 200;
+  position: absolute;
+  right: 20px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.71);
+}
+.BtnCerrarSesion {
+  position: absolute;
+  left: 20px;
+  padding: 20px 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: orange;
+  cursor: pointer;
+}
+.BtnCerrarSesion {
+  transition: transform 0.3s ease;
+}
+.BtnCerrarSesion:hover {
+  transform: translateY(-3px);
+}
+
+.btn {
+    padding: 15px;
+    margin: 3%;
+    background-color: #652c5f;
+    color: white;
+    border-radius: 10px;
+}
