@@ -2,11 +2,12 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./Styles.css";
 import { Link } from "react-router-dom";
-
-
+import { useSelector } from "react-redux";
 
 const Login = () => {
-  const initialValues = {
+
+  const { isLoged, setIsLoged } = useSelector((state) => state.isLoged)
+  const form = {
     email: "",
     password: "",
   };
@@ -31,7 +32,7 @@ const Login = () => {
         </Link>
         <h2 className="text-u">Login</h2>
         <Formik
-          initialValues={initialValues}
+          initialValues={form}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
