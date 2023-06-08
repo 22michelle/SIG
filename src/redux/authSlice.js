@@ -2,19 +2,18 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-    user: null,
+    user: "",
     isLoged: false,
     token: null,
 };
 
 export const login = createAsyncThunk(
     "authSlice/login",
-    async(user, { dispatch, rejectWithValue }) => {
+    async (user, { dispatch, rejectWithValue }) => {
         try {
             const { data } = await axios.post(`/user/login`, user);
             // se guarda todo el usuario en el localstorage con el token incluido
-            localStorage.setItem("user", JSON.stringify(data.data));
-            console.log(data.data)
+            console.log(data)
             return data.data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
@@ -24,7 +23,7 @@ export const login = createAsyncThunk(
 
 export const verifyLogin = createAsyncThunk(
     "authSlice/verifyLogin",
-    async(_, { dispatch, rejectWithValue }) => {
+    async (_, { dispatch, rejectWithValue }) => {
         try {
             const data = localStorage.getItem(user);
             if (!data) {
@@ -38,7 +37,7 @@ export const verifyLogin = createAsyncThunk(
     }
 );
 
-export const logout = createAsyncThunk("authSlice/logout", async(_, {}) => {
+export const logout = createAsyncThunk("authSlice/logout", async (_, { }) => {
     localStorage.removeItem("user");
 });
 

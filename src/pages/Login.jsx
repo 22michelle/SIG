@@ -5,40 +5,36 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import authSlice, { login, verifyLogin } from "../redux/authSlice";
 import { useState } from "react";
+import { useFormik } from "formik/dist";
 
 const Login = () => {
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  // const { isLoged, setIsLoged } = useSelector((state) => state.isLoged)
-  const [form, setForm] = useState({
-    username: "",
-    password: ""
-  })
-
-  const validationSchema = Yup.object().shape({
+  const LoginValidSchema = Yup.object().shape({
     username: Yup.string().required("Ingrese su username"),
     password: Yup.string().required("Ingrese su contraseña"),
-  });
-
-  const handleChange = (e) => {
-    console.log({ ...form, [e.target.name]: e.target.value })
-  };
-
-  const sigIn = (e) => {
-    e.preventDefault()
-    if (dispatch(login(form))) {
-      navigate('/profile ')
-    } else {
-      navigate('/')
+  })
+  const formik = useFormik({
+    initialValues: {
+      username: "",
+      password: "",
+    },
+    validationSchema: LoginValidSchema,
+    onSubmit: async (values) => {
+      try {
+        let response = dispatch(login(values))
+        
+      } catch (error) {
+        console.log(error.message)
+      }
     }
-  }
+  })
 
   return (
     <div className="body1">
       <div className="login-form-container">
-        {/* button return */}
         <Link to="/">
           <button className="btn-return-login">
             <i className="fa-solid fa-x mt-1"></i>
@@ -46,9 +42,7 @@ const Login = () => {
         </Link>
         <h2 className="text-u">Login</h2>
         <Formik
-          initialValues={form}
-          validationSchema={validationSchema}
-          onSubmit={sigIn}
+          onSubmit={formik.handleSubmit}
         >
           <Form>
             <div className="form-group">
@@ -64,14 +58,14 @@ const Login = () => {
                       id="username"
                       className="form-control"
                       placeholder="Ingrese un username"
-                      value={form.username}
-                      onChange={(e) => handleChange(e)}
+                      value={formik.values.username}
+                      onChange={formik.handleChange}
                     />
                   </div>
                 )}
               </Field>
               <ErrorMessage
-                value={form.username}
+                value={formik.values.username}
                 name="username"
                 component="div"
                 className="error-message"
@@ -91,14 +85,14 @@ const Login = () => {
                       id="password"
                       className="form-control"
                       placeholder="Ingrese su contraseña"
-                      value={form.password}
-                      onChange={(e) => handleChange(e)}
+                      value={formik.values.password}
+                      onChange={formik.handleChange}
                     />
                   </div>
                 )}
               </Field>
               <ErrorMessage
-                value={form.password}
+                value={formik.values.password}
                 name="password"
                 component="div"
                 className="error-message"
