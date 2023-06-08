@@ -4,7 +4,7 @@
 }
 
 .body{
-    background-color: #652c5f;
+  background-image: linear-gradient(#98387f, #241a33);
     height: 100%;
     padding: 5%;
 }
