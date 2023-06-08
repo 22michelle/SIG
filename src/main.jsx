@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     element: <Profile />,
   },
 ]);
-axios.defaults.baseURL = "";
+axios.defaults.baseURL = "http://localhost:4000";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <RouterProvider router={router} />

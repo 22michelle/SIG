@@ -11,9 +11,10 @@ export const login = createAsyncThunk(
     "authSlice/login",
     async(user, { dispatch, rejectWithValue }) => {
         try {
-            const { data } = await axios.post(`/login`, user);
+            const { data } = await axios.post(`/user/login`, user);
             // se guarda todo el usuario en el localstorage con el token incluido
             localStorage.setItem("user", JSON.stringify(data.data));
+            console.log(data.data)
             return data.data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
