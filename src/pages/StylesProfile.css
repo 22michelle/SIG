@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .body{
     background-color: #652c5f;
     height: 100%;
@@ -41,8 +46,8 @@
 }
 
 .Logo {
-  width: 120px;
-  height: 45px;
+  width: 200px;
+  height: 100px;
   position: absolute;
   right: 20px;
   padding: 10px;
