@@ -7,12 +7,12 @@
   right: 0;
   z-index: 100;
   background-color: transparent;
-  height: 5.15rem;
+  height: 6.15rem;
   transition: background-color 1.0s;
 }
 
 .navbar.scrolled {
-    background-color: #ffffff;
+    background-color: #ffffff00;
   }
 
 .navbar .logo {
@@ -25,7 +25,7 @@
 .navbar .logo:hover {
   height: 50px;
   width: 180px;
-  transition: all 0.9s;
+  transition: all 0.5s;
 }
 
 .top-fixed {
@@ -38,7 +38,7 @@
 
 .btn {
   color: #ffffff;
-  background-color: #e8c645;
+  background-color: #652c5f;
   font-size: 16px;
   font-weight: bold;
   width: 150px;
