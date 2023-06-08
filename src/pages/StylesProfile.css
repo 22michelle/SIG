@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .body{
     background-color: #652c5f;
     height: 100%;
@@ -10,7 +15,7 @@
   padding: 20px;
   color: white;
   max-width: 55%;
-  height: 500px;
+  height: 550px;
   margin: 0 auto;
   margin-top: 100px;
   position: relative;
@@ -38,12 +43,13 @@
 }
 
 .Logo {
-  width: 120px;
-  height: 45px;
+  width: 200px;
+  height: 100px;
   position: absolute;
   right: 20px;
   padding: 10px;
   cursor: pointer;
+  top: 460px;
 }
 .data {
   font-weight: 200;
@@ -68,10 +74,10 @@
   transform: translateY(-3px);
 }
 
-.button {
-    /* margin: -10px; */
-    padding: 5px;
-    background-color: orange;
+.btn {
+    padding: 15px;
+    margin: 3%;
+    background-color: #652c5f;
     color: white;
-    
+    border-radius: 10px;
 }

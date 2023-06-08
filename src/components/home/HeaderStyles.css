@@ -4,7 +4,7 @@
 }
 
 .Title {
-    margin-top: 300px;
+    margin-top: 200px;
     text-align: center;
     font-size: 48px;
     color: #fffffff5;
@@ -13,8 +13,9 @@
     background-attachment: fixed;
 }
 
-.button {
-    color: black;
+.btn {
+    color: rgb(255, 255, 255);
+    background-color: #652c5f;
 }
 
 .body {

@@ -27,10 +27,12 @@ const Profile = () => {
             </li>
           </ul>
           <hr />
-          <Link to="/">
-            <button className="button">Cerrar Sesión</button>
-          </Link>{" "}
-          <img className="Logo" src={Logo} alt="" />
+          <div className="col-4 m-3">
+            <Link to="/">
+              <button className="btn">Cerrar Sesión</button>
+            </Link>{" "}
+            <img className="Logo p-4 col-2" src={Logo} alt="" />
+          </div>
         </div>
       </div>
     </div>
